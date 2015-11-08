@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 ####################################### Develop
 gem 'mongoid', 'github' => 'mongoid/mongoid'
 gem 'bson_ext'
+
 #######################################
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
