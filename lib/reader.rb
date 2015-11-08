@@ -10,7 +10,7 @@ class Reader
   
   def initialize
     @params = YAML.load(File.read File.dirname(__FILE__)+ '/news/xpaths.yml')
-    @sites = ['vietnamnet','vnexpress']
+    @sites = ['Nguoiduatin','Vietnamnet','Vnexpress','Ictnews','Cand']
   end
   
   def run
@@ -23,6 +23,7 @@ class Reader
       list = doc.xpath(@params[site_name]['list_link'])
       list.each do |link|
         url = base + link['href']
+        url = link['href'] if link['href'].to_s.include? 'http'
         open(url) do |rss|
           rss = open(url).read
           feed = RSS::Parser.parse(rss,false)
@@ -37,7 +38,8 @@ class Reader
             paper = Nokogiri::HTML(open(item.link.strip)) rescue ''
             content = paper.xpath(@params[site_name]['content']) if  paper.present?
             if content.present?
-              content_paper = Paper.new(:site_category_id => site_category.id )
+              content_paper = Paper.new(:site_category_id => site_category.id.to_s )
+              content_paper.url = item.link.strip
               content_paper.content = content.to_s
               content_paper.save
             end

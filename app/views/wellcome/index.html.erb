@@ -1,0 +1,17 @@
+<%= link_to " Site's List ", '/site' %>
+<br/>
+<% @sites.each do |site| %>
+  <%= link_to " Category of #{site.site_name}","/category/#{site.id.to_s}" %>
+  <br/>
+    <% @site_categories.each do |st|%>
+      <% if st.site_id.to_s == site.id.to_s %>
+        <% @categories.each do |cat|%>
+          <% if cat.id.to_s == st.category_id.to_s %>
+            <%= link_to "Link #{cat.title}","/paper/#{site.id.to_s}:#{cat.id.to_s}" %>
+            </br>
+          <% end %>
+        <% end %>
+      <% end %>
+    <% end %>
+  </br>
+<% end %>

@@ -1,12 +1,30 @@
-vnexpress:
+Vnexpress:
   base: 'http://vnexpress.net'
   rss_link: 'http://vnexpress.net/rss'
-  list_link: '//*[@class="content_block width_common"]/div/div/ul/li/a'
+  list_link: '//*[@class="right icon_responsive ico_respone_rss"]'
   content: '//*[@class="fck_detail width_common"]'
   remove_name: ' - VnExpress RSS'
-vietnamnet:
+Vietnamnet:
   base: 'http://vietnamnet.vn'
   rss_link:  'http://vietnamnet.vn/vn/rss/'
   list_link: '//*[@id="MainWraper"]/div[4]/div/div/div/div/table/tr/td[3]/a'
   content: '//*[@id="ArticleContent"]'
   remove_name: 'VietNamNet - '
+Ictnews:
+  base: 'http://ictnews.vn'
+  rss_link: 'http://ictnews.vn/rss.ict'
+  list_link: '//*[@class="table-c1"]/a'
+  content: '//*[@class="content-detail"]'
+  remove_name: '| ICTNews'
+Nguoiduatin:
+  base: 'http://www.nguoiduatin.vn/'
+  rss_link: 'http://www.nguoiduatin.vn/rss.html'
+  list_link: '//*[@class="desc"]/a'
+  content: 'nil'
+  remove_name: ''
+Cand:
+  base: 'http://cand.com.vn'
+  rss_link: 'http://cand.com.vn/rss/'
+  list_link: '//*[@class="RSSName"]'
+  content: '//*[@class="box-widget"]'
+  remove_name: '- Công An Nhân Dân'

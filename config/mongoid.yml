@@ -22,10 +22,10 @@ development:
         #   mode: :secondary_preferred
 
         # The name of the user for authentication.
-        # user: 'user'
+        user: 'admin'
 
         # The password of the user for authentication.
-        # password: 'password'
+        password: 'GTBp9tSImKgx'
 
         # The user's database roles.
         # roles:
