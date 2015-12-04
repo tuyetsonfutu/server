@@ -2,29 +2,92 @@ Vnexpress:
   base: 'http://vnexpress.net'
   rss_link: 'http://vnexpress.net/rss'
   list_link: '//*[@class="right icon_responsive ico_respone_rss"]'
-  content: '//*[@class="fck_detail width_common"]'
-  remove_name: ' - VnExpress RSS'
+  content: 
+    - '//*[@id="article_content"]'
+    - '//*[@class="fck_detail width_common"]'
+  category: 'nil'
+  remove_name: 
+    - ' - VnExpress RSS'
 Vietnamnet:
   base: 'http://vietnamnet.vn'
   rss_link:  'http://vietnamnet.vn/vn/rss/'
   list_link: '//*[@id="MainWraper"]/div[4]/div/div/div/div/table/tr/td[3]/a'
-  content: '//*[@id="ArticleContent"]'
-  remove_name: 'VietNamNet - '
+  content: 
+    - '//*[@id="ArticleContent"]'
+  category: 'nil'
+  remove_name: 
+    - 'VietNamNet - '
 Ictnews:
   base: 'http://ictnews.vn'
   rss_link: 'http://ictnews.vn/rss.ict'
   list_link: '//*[@class="table-c1"]/a'
-  content: '//*[@class="content-detail"]'
-  remove_name: '| ICTNews'
+  content: 
+    - '//*[@class="content-detail"]'
+  category: 'nil'
+  remove_name: 
+    - '| ICTNews'
 Nguoiduatin:
   base: 'http://www.nguoiduatin.vn/'
   rss_link: 'http://www.nguoiduatin.vn/rss.html'
   list_link: '//*[@class="desc"]/a'
-  content: 'nil'
-  remove_name: ''
+  category: '//*[@class="desc"]/strong'
+  content: 
+    - '//*[@id="main-detail"]'
+  remove_name: 
+    - ''
 Cand:
   base: 'http://cand.com.vn'
   rss_link: 'http://cand.com.vn/rss/'
   list_link: '//*[@class="RSSName"]'
-  content: '//*[@class="box-widget"]'
-  remove_name: '- Công An Nhân Dân'
+  category: 'nil'
+  content: 
+    - '//*[@class="box-widget post-content"]'
+  remove_name: 
+    - '- Công An Nhân Dân'
+Tienphong:
+  base: 'http://www.tienphong.vn'
+  rss_link: 'http://www.tienphong.vn/rss.aspx'
+  list_link: '//*[@class="rss-channels"]/li/a'
+  category: 'nil'
+  remove_name: 
+    - '| Báo điện tử Tiền Phong'
+  content: 
+    - '//*[@class="article-contents cmscontents"]'
+Thanhnien:
+  base: 'http://www.thanhnien.vn'
+  rss_link: 'http://www.thanhnien.vn/rss.html'
+  list_link: '//*[@class="di_list"]/ul/li/a'
+  category: 'nil'
+  remove_name: 
+    - '| Thanh Niên'
+  content: 
+    - '//*[@class="article-ds"]'
+Gamek:    
+  base: 'http://gamek.vn'
+  rss_link: 'http://gamek.vn/rss.chn'
+  list_link: '//*[@id="listrss"]/ul/li/a'
+  category: 'nil'
+  content: 
+    - '//*[@class="rightdetail_content"]'
+  remove_name: 
+    - 'GameK.vn - '
+    - '- RSS Feed '
+Bongdaplus:
+  base: 'http://www.bongdaplus.vn'
+  rss_link: 'http://www.bongdaplus.vn/rss-feed.bdplus'
+  list_link: '/html/body/div[5]/div[2]/table/tr/td[2]/a'
+  category: 'nil'
+  content: 
+    - '//*[@id="grdContNews"]/div[1]/div'
+  remove_name: 
+    - 'BONGDA+ |'
+    - 'Chuyên mục:'
+24h:
+  base: 'http://www.24h.com.vn'
+  rss_link: 'http://www.24h.com.vn/guest/RSS/'
+  list_link: '//*[@height="17"]/p/font/a'
+  category: '//*[@width="35%"]/p/font'
+  content: 
+    - '//*[@itemprop="articleBody"]'
+  remove_name:
+    - ''
